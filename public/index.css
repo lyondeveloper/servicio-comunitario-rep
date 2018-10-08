@@ -35,7 +35,7 @@ body {
   box-sizing: border-box;
   border: 1px solid lightgray;
 }
-.container button {
+.container #login {
   background-color: darkorange;
   color: white;
   padding: 12px 20px;
@@ -43,7 +43,7 @@ body {
   width: 100%;
   cursor: pointer;
 }
-.container button:hover {
+.container #login:hover {
   opacity: 0.8;
 }
 

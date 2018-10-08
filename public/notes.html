@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio - Aplicación Web</title>
-  <link rel="stylesheet" href="home.css">
+  <title>Notas - Aplicación Web</title>
+  <link rel="stylesheet" href="notes.css">
   <script src="home.js"></script>
+  <script src="notes.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -26,21 +27,12 @@
   </div>
 
   <div class="main">
-    <div class="main-section register">
-      <i class="fas fa-database fa-10x"></i>
-      <button type="button">Registrar datos del alumno</button>
+    <div class="header">
+      <input type="text" name="note" id="note" placeholder="Escribir nota" autocomplete="off">
+      <button type="button" id="add">Añadir</button>
     </div>
-    <div class="main-section show">
-      <i class="fas fa-desktop fa-10x"></i>
-      <button type="button">Mostrar datos del alumno</button>
-    </div>
-    <div class="main-section messages">
-      <i class="fas fa-comments fa-10x"></i>
-      <button type="button">Ver mensajes</button>
-    </div>
-    <div class="main-section notes">
-      <i class="fas fa-sticky-note fa-10x"></i>
-      <button type="button">Ver notas</button>
+    <div class="notes" id="notes">
+
     </div>
   </div>
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensajes - Aplicación Web</title>
+  <link rel="stylesheet" href="messenger.css">
+  <script src="messenger.js"></script>
+</head>
+<body>
+  <div class="main-nav">
+    <img src="images/logo.png">
+    <ul>
+      <li><a href="home.html">Inicio</a></li>
+      <li><a href="#">Alumnos</a>
+        <ul>
+          <li><a href="#">Registrar Datos</a></li>
+          <li><a href="#">Mostrar Datos</a></li>
+        </ul>
+      </li>
+      <li><a href="messenger.html">Mensajes</a></li>
+      <li><a href="notes.html">Tareas</a></li>
+      <li><a href="index.html">Salir</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="contacts">
+      <div class="header"><p>Contactos</p></div>
+      <div class="contact-list" id="contact-list">
+        <div class="contact">
+          <img src="images/avatar.png">
+          <a href="#">Javier Zabala</a>
+        </div>
+      </div>
+    </div>
+    <div class="chat">
+      <div class="header"><p>Mensajes</p></div>
+      <div class="messages" id="messages">
+        
+      </div>
+      <form class="form" id="form">
+        <input type="text" name="text" id="text" placeholder="Enviar un mensaje" autocomplete="off">
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    Derechos Reservados &reg; 2018
+  </footer>
+</body>
+</html>

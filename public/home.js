@@ -13,19 +13,35 @@ function toggleDisplay() {//Cambiar de invisible a visible
   if (chatContainer.style.display == 'block' && textInput.style.display == 'block') {
     textInput.style.display = 'none';
     chatContainer.style.display = 'none';
+    chatContainer.style.height = '0px';
   } else {
     textInput.style.display = 'block';
     chatContainer.style.display = 'block';
     textInput.focus();
-  }
+    animate();
+  } 
+}
+
+function animate() {
+  var height = 0;
+  var interval = setInterval(function() {
+    if (height < 300) {
+      height++;
+      chatContainer.style.height = height + 'px';
+    } else {
+      clearInterval(interval);
+    }
+  }, 5);
 }
 
 function sendMessage(e) {
   e.preventDefault();
   var today = new Date().toLocaleString();
-  var message = textInput.value;
-  var username = "Javier Zabala";
-  createDiv(today, username, message);
+  if (textInput.value != "") {
+    var message = textInput.value;
+    var username = "Javier Zabala";
+    createDiv(today, username, message);
+  }
   chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
