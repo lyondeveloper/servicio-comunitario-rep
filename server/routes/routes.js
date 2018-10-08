@@ -3,6 +3,7 @@ const app = express();
 
 //Routes
 app.use(require('./User-Route'));
-app.use(require('./login'));
+app.use(require('./Login-Route'));
+app.use(require('./Task-Route'));
 
 module.exports = app;

@@ -1,22 +1,22 @@
-//Exports
+require('./config/config');
+require('colors');
 const express = require('express');
 const app = express(); 
 const http = require('http');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const colors = require('colors');
-
-//Server configuration
-const port = process.env.PORT || 3000;
-const server = http.createServer(app);
-const publicPath = path.resolve(__dirname, '../public');
+const socketIO = require('socket.io');
 
 //middlewares
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.resolve(__dirname, '../public')));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(express.static(publicPath));
-app.use(require('./routes/route'));
+app.use(require('./routes/routes'));
+
+//Server configuration
+const server = http.createServer(app);
+module.exports.io = socketIO(server);
 
 mongoose.connect("mongodb://localhost:27017/ServicioComunitarioDB", (err) => {
 
@@ -30,8 +30,8 @@ mongoose.connect("mongodb://localhost:27017/ServicioComunitarioDB", (err) => {
 
 });
 
-server.listen(port, () => {
+server.listen(process.env.PORT, () => {
 
-    console.log(`Server running in port ${port}`.yellow);
+    console.log(`Server running in port ${process.env.PORT}`.yellow);
 
 });

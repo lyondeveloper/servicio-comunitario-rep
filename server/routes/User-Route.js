@@ -4,7 +4,7 @@ const UserController = require('../controllers/User-Controller');
 
 router.post('/api/users/create', (req, res) => {
 
-    UserController.createUser(req, res);
+    UserController.create(req, res);
 
 });
 

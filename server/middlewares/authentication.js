@@ -7,15 +7,16 @@ const jwt = require('jsonwebtoken');
 */
 let verifyToken = (req, res, next) => {
 
-    let token = req.token;
+    let token = req.get('token');
 
-    jwt.verify(token, process.env.TOKEN_SEED, (err, decoded)=> {
+    jwt.verify(token, process.env.TOKEN_SEED, (err, decoded) => {
 
         if (err) {
 
             return res.status(500).json({
 
                 ok: false,
+                err,
                 message: "Token not valid"
 
             });

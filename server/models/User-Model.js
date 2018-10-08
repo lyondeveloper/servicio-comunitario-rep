@@ -64,6 +64,14 @@ let userSchema = new Schema({
         type: Date,
         required: false,
 
+    },
+
+    tasks: {
+
+        type: Array,
+        required: false,
+        default: []
+
     }
 
 });
