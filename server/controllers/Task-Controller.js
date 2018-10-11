@@ -58,6 +58,175 @@ class TaskController {
                 
     }   
 
+    get(req, res) {
+
+        Task
+        .find()
+        .populate('user', 'name')
+        .sort('description')
+        .exec((err, task) => {
+
+            if (err) {
+
+                return res.status(500).json({
+
+                    ok: false,
+                    err
+
+                });
+
+            }
+
+            if (!task) {
+
+                return res.status(500).json({
+
+                    ok: false,
+                    message: "Maybe the task doesn't exist"
+
+                });
+
+            }
+
+            Task.count((err, count) => {
+
+                res.json({
+    
+                    ok: true,
+                    task,
+                    count
+                
+                });
+
+            });
+
+        });
+
+    }
+  
+    getByDescription(req, res) {
+
+        let description = req.params.description;
+        let regexp = new RegExp(description, 'i');
+
+        Task.find({description: regexp})
+            .populate('user', 'name')
+            .exec((err, task) => {
+
+            if (err) {
+
+                return res.status(500).json({
+
+                    ok: false,
+                    err
+
+                });
+
+            } 
+
+            if (!task) {
+
+                return res.status(401).json({
+
+                    ok: false,
+                    message: "Maybe the task doesn't exist or is completed"
+
+                }); 
+
+            }   
+
+            res.json({
+
+                ok: true,
+                task
+
+            });
+ 
+        });
+
+    }
+
+    update(req, res) {
+
+        let id = req.params.id;
+
+        let newBody = _.pick(req.body, ['description', 'completed']);
+
+        Task.findByIdAndUpdate(id, newBody, {new: true}, (err, taskUpdated) => {
+
+            if (err) {
+
+                return res.status(500).json({
+
+                    ok: false,
+                    err
+
+                });
+
+            }
+
+            if (!taskUpdated) {
+
+                return res.status(400).json({
+
+                    ok: false,
+                    message: "The task you want to update doesn't exist"
+                    
+                });
+
+            }
+
+            res.json({
+
+                ok: true,
+                taskUpdated
+
+            });
+
+        });
+
+    }
+
+    
+    delete(req, res) {
+
+        let id = req.params.id;
+
+        Task.findByIdAndDelete(id, (err, taskDeleted) => {
+
+            if (err) {
+
+                return res.status(500).json({
+
+                    ok: false,
+                    err
+
+                });
+
+            }
+
+            if (!taskDeleted) {
+
+                return res.status(400).json({
+
+                    ok: false,
+                    message: "Maybe the task doesn't exist"
+
+                });
+
+            }
+ 
+            res.json({
+
+                ok: true,
+                taskDeleted
+
+            });
+
+        });
+
+    }
+
 }
 
 var taskController = new TaskController();
