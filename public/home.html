@@ -2,25 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio - Aplicación Web</title>
-  <link rel="stylesheet" href="home.css">
-  <script src="home.js"></script>
+  <link rel="stylesheet" href="css/home.css">
+  <script src="js/home.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Nav -->
   <div class="main-nav">
-    <img src="images/logo.png">
+    <img src="css/images/logo-school.png">
     <ul>
       <li><a href="home.html">Inicio</a></li>
-      <li><a href="#">Alumnos</a>
-        <ul>
-          <li><a href="#">Registrar Datos</a></li>
-          <li><a href="#">Mostrar Datos</a></li>
-        </ul>
-      </li>
-      <li><a href="messenger.html">Mensajes</a></li>
-      <li><a href="notes.html">Tareas</a></li>
+      <li><a href="store.html">Inscribir alumno</a></li>
+      <li><a href="show.html">Datos de inscripción</a></li>
       <li><a href="index.html">Salir</a></li>
     </ul>
   </div>
@@ -28,33 +22,24 @@
   <div class="main">
     <div class="main-section register">
       <i class="fas fa-database fa-10x"></i>
-      <button type="button">Registrar datos del alumno</button>
+      <a href="store.html">Inscribir alumno</a>
     </div>
     <div class="main-section show">
       <i class="fas fa-desktop fa-10x"></i>
-      <button type="button">Mostrar datos del alumno</button>
+      <a href="show.html">Mostrar datos de inscripción</a>
     </div>
     <div class="main-section messages">
       <i class="fas fa-comments fa-10x"></i>
-      <button type="button">Ver mensajes</button>
+      <a href="update.html">Actualizar datos de inscripción</a>
     </div>
     <div class="main-section notes">
       <i class="fas fa-sticky-note fa-10x"></i>
-      <button type="button">Ver notas</button>
+      <a href="delete.html">Eliminar datos de inscripción</a>
     </div>
-  </div>
-
-  <div class="chat">
-    <button type="button" class="btn">Chat</button>
-    <div class="chat-container" id="chat-container">
-    </div>
-    <form class="form" id="form">
-      <input type="text" name="text" id="text" placeholder="Enviar un mensaje" autocomplete="off">
-    </form>
   </div>
 
   <footer>
-    Derechos Reservados &reg; 2018
+      Derechos Reservados &reg; 2018
   </footer>
 </body>
 </html>
