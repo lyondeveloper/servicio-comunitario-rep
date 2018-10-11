@@ -1,6 +1,6 @@
-const Student = require('../../models/register/Student-Model');
-const Parent = require('../../models/register/Parent-Model');
-const Represent = require('../../models/register/Represent-Model');
+const Student = require('../models/register/Student-Model');
+const Parent = require('../models/register/Parent-Model');
+const Represent = require('../models/register/Represent-Model');
 const _ = require('underscore');
 const bcrypt = require('bcryptjs');
 
