@@ -4,8 +4,6 @@ const Schema = mongoose.Schema;
 const Represent = require('./Represent-Model');
 const Parent = require('./Parent-Model');
 
-//var representSchema = new Represent; 
-
 let validSexTypes = {
 
     values: ['Masculino', 'Femenino'],
@@ -25,11 +23,10 @@ let studentSchema = new Schema({
     identification: {
 
         type: Number,
-        unique: true,
         required: [true, 'The identification field is needed']
 
     },
-
+    
     sex: {
 
         type: String,
@@ -143,7 +140,8 @@ let studentSchema = new Schema({
 
     },
 
-    representAndParent: [Represent.schema, Parent.schema]
+    represent: Represent.schema,
+    parent: Parent.schema
 
 });
 

@@ -41,7 +41,7 @@ let verifyRole = (req, res, next) => {
 
     let user = req.user;
 
-    if (user.role !== 'SUPER_ADMIN' || user.role !== 'ADMIN') {
+    if (user.role !== 'SUPER_ADMIN') {
 
         return res.status(500).json({
 

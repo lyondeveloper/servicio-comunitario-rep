@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 //roles available
 let validRoles = {
 
-    values: ['SUPER_ADMIN', 'ADMIN', 'USER'],
+    values: ['SUPER_ADMIN', 'ADMIN'],
     message: "{VALUE} is not a valid role"
 
 }
@@ -48,7 +48,7 @@ let userSchema = new Schema({
         type: String,
         enum: validRoles,
         required: false,
-        default: "USER"
+        default: "ADMIN"
 
     },
 

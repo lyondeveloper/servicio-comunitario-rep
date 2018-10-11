@@ -36,7 +36,6 @@ let parentSchema = new Schema({
     identification: {
 
         type: Number,
-        unique: true,
         required: [true, 'The identification field is needed']
 
     },

@@ -6,7 +6,6 @@ const http = require('http');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const socketIO = require('socket.io');
 
 //middlewares
 app.use(express.static(path.resolve(__dirname, '../public')));
@@ -14,9 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(require('./routes/routes'));
 
-//Server configuration
 const server = http.createServer(app);
-module.exports.io = socketIO(server);
 
 mongoose.connect("mongodb://localhost:27017/ServicioComunitarioDB", (err) => {
 
