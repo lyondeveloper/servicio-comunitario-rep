@@ -6,6 +6,13 @@ function intialize() {
   user.addEventListener("input", validate);
   pass.addEventListener("input", validate);
   validate();
+
+  setTimeout(function() {
+    var element = document.getElementsByClassName('modal')[0];
+    element.style.display = 'none';
+    var element = document.getElementsByClassName('form')[0];
+    element.style.display = 'block';
+  }, 2000);
 }
 function validate() {
   if (user.value == "") {

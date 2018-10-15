@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <title>Eliminar - Aplicación Web</title>
   <link rel="stylesheet" href="css/store.css">
-  <script src="js/home.js"></script>
+  <link rel="icon" href="css/images/logo-school-icon.png" type="image/png">
+  <script src="js/store.js"></script>
 </head>
 <body>
+  <!-- Modal View -->
+  <div class="modal">
+    <div class="loader">
+
+    </div>
+  </div>
+  
   <!-- Nav -->
   <div class="main-nav">
     <img src="css/images/logo-school.png">
@@ -18,10 +26,19 @@
     </ul>
   </div>
 
+  <!-- Steps -->
+  <ul class="progressbar">
+    <li class="active">Datos del Estudiante</li>
+    <li>Datos de la Madre</li>
+    <li>Datos del Padre</li>
+    <li>Datos del Representante</li>
+  </ul>
+
+  <!-- Main Form -->
   <div class="main">
     <div class="fieldset">
       <div class="title">
-        <h3>Datos del Alumno</h3>
+        <h4>Alumno</h4>
       </div>
       <div class="data">
         <datalist id="data">
@@ -85,7 +102,7 @@
     </div>
     <div class="fieldset">
       <div class="title">
-        <h3>Datos de la Madre</h3>
+        <h4>Madre</h4>
       </div>
       <div class="data">
         <!-- Mother's Data -->
@@ -122,7 +139,7 @@
     </div>
     <div class="fieldset">
       <div class="title">
-        <h3>Datos del Padre</h3>
+        <h4>Padre</h4>
       </div>
       <div class="data">
         <!-- Father's Data -->
@@ -159,7 +176,7 @@
     </div>
     <div class="fieldset">
       <div class="title">
-        <h3>Datos del Representante</h3>
+        <h4>Representante</h4>
       </div>
       <div class="data">
         <!-- Representative's Data -->

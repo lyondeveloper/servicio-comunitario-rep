@@ -3,6 +3,9 @@
   padding: 0;
   border: 0;
 }
+*:focus {
+  outline: none;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -12,8 +15,63 @@ body {
   justify-content: center;
 }
 
+/* Preloading */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.95);
+}
+.loader {
+  display: block;
+  position: relative;
+  top: 40%;
+  left: 44%;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 3px solid transparent;
+  border-top-color: lightskyblue;
+
+  animation: spin 2s linear infinite;
+
+  z-index: 1001;
+}
+  .loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    left: 5px;
+    right: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: green;
+    animation: spin 3s linear infinite;
+  }
+  .loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: darkorange;
+    animation: spin 1.5s linear infinite;
+  }
+@keyframes spin {
+  from {transform: rotate(0deg)}
+  to {transform: rotate(360deg)}
+}
+
 /* Login Form */
 .form {
+  display: none;
   width: 430px;
   box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.4);
   background: white;
@@ -36,16 +94,32 @@ body {
   box-sizing: border-box;
   border: 1px solid lightgray;
 }
-.container #login {
-  background-color: darkorange;
+.container .btn {
   color: white;
   padding: 12px 20px;
-  margin: 8px 0;
-  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  float: left;
+  width: 49%;
   cursor: pointer;
+  border-radius: 5px;
 }
-.container #login:hover {
+.container .btn:hover {
   opacity: 0.8;
+}
+.login {
+  margin-right: 1%;
+  background-color: darkorange;
+}
+.login:focus {
+  box-shadow: 0 0 2px 2px darkorange;
+}
+.register {
+  margin-left: 1%;
+  background-color: green;
+}
+.register:focus {
+  box-shadow: 0 0 2px 2px green;
 }
 
 .animation {

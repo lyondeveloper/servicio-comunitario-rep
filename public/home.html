@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Inicio - Aplicación Web</title>
+  <link rel="icon" href="css/images/logo-school-icon.png" type="image/png">
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/all.min.css">
   <script src="js/home.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" integrity="sha384-kW+oWsYx3YpxvjtZjFXqazFpA7UP/MbiY4jvs+RWZo2+N94PFZ36T6TFkc9O3qoB" crossorigin="anonymous"></script>
 </head>
 <body>
+  <!-- Modal View -->
+  <div class="modal">
+    <div class="loader">
+
+    </div>
+  </div>
+
   <!-- Nav -->
   <div class="main-nav">
     <img src="css/images/logo-school.png">
@@ -19,6 +27,7 @@
     </ul>
   </div>
 
+  <!-- Main section -->
   <div class="main">
     <div class="main-section register">
       <i class="fas fa-database fa-10x"></i>
@@ -29,11 +38,11 @@
       <a href="show.html">Mostrar datos de inscripción</a>
     </div>
     <div class="main-section messages">
-      <i class="fas fa-comments fa-10x"></i>
+      <i class="fas fa-pen-alt fa-10x"></i>
       <a href="update.html">Actualizar datos de inscripción</a>
     </div>
     <div class="main-section notes">
-      <i class="fas fa-sticky-note fa-10x"></i>
+      <i class="fas fa-minus-circle fa-10x"></i>
       <a href="delete.html">Eliminar datos de inscripción</a>
     </div>
   </div>

@@ -4,9 +4,17 @@
   <meta charset="UTF-8">
   <title>Ingresar - Aplicación Web</title>
   <link rel="stylesheet" href="css/index.css">
+  <link rel="icon" href="css/images/logo-school-icon.png" type="image/png">
   <script src="js/index.js"></script>
 </head>
 <body>
+  <!-- Modal View -->
+  <div class="modal">
+      <div class="loader">
+  
+      </div>
+  </div>
+
   <!-- Form -->
   <form action="" class="form animation">
     <!-- Image Container -->
@@ -20,7 +28,8 @@
       <input type="text" name="user" id="user" placeholder="Ingrese Usuario" required>
       <label for="pass"><b>Contraseña</b></label>
       <input type="password" name="pass" id="pass" placeholder="Ingrese Contraseña" required>
-      <button type="submit" id="login">Ingresar</button>
+      <button type="submit" class="btn login">Ingresar</button>
+      <button type="submit" class="btn register">Registrarse</button>
     </div>
   </form>
 </body>
