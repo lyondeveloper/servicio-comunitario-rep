@@ -16,7 +16,7 @@
   </div>
 
   <!-- Form -->
-  <form action="" class="form animation">
+  <form action="/api/login" method="POST" class="form animation">
     <!-- Image Container -->
     <div class="image-container">
       <img src="css/images/avatar.png">
@@ -25,11 +25,11 @@
     <!-- Content Container -->
     <div class="container">
       <label for="user"><b>Usuario</b></label>
-      <input type="text" name="user" id="user" placeholder="Ingrese Usuario" required>
+      <input type="text" name="user" id="user" placeholder="Ingrese Usuario" required autocomplete="off">
       <label for="pass"><b>Contraseña</b></label>
       <input type="password" name="pass" id="pass" placeholder="Ingrese Contraseña" required>
       <button type="submit" class="btn login">Ingresar</button>
-      <button type="submit" class="btn register">Registrarse</button>
+      <a href="register.html" class="btn register">¿No está registrado?</a>
     </div>
   </form>
 </body>
