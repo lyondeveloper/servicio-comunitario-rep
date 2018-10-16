@@ -1,7 +1,7 @@
 require('./config/config');
 require('colors');
 const express = require('express');
-const app = express(); 
+const app = express();
 const http = require('http');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -9,13 +9,13 @@ const bodyParser = require('body-parser');
 
 //middlewares
 app.use(express.static(path.resolve(__dirname, '../public')));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(require('./routes/routes'));
 
 const server = http.createServer(app);
 
-mongoose.connect("mongodb://localhost:27017/ServicioComunitarioDB", (err) => {
+mongoose.connect(process.env.MONGOURI, (err) => {
 
     if (err) {
 

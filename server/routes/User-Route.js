@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('../controllers/User-Controller');
-const {
-    verifyRole,
-    verifyToken
-} = require('../middlewares/authentication');
+const { verifyRole, verifyToken } = require('../middlewares/authentication');
 
 router.post('/api/users/create', (req, res) => {
 
