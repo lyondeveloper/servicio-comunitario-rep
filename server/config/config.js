@@ -40,7 +40,7 @@ if (process.env.NODE_ENV === "dev") {
 
 } else {
 
-    process.env.MONGOURI = "mongodb://lyon:123lyon@ds131323.mlab.com:31323/universityregister"
+    process.env.MONGOURI = process.env.MONGO_PRODUCTION;
 
 }
 
