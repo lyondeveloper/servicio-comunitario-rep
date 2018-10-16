@@ -1,9 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('../controllers/User-Controller');
-const {verifyRole, verifyToken} = require('../middlewares/authentication');
+const {
+    verifyRole,
+    verifyToken
+} = require('../middlewares/authentication');
 
-router.post('/api/users/create', [verifyRole, verifyToken], (req, res) => {
+router.post('/api/users/create', (req, res) => {
 
     UserController.create(req, res);
 
@@ -36,7 +39,7 @@ router.put('/api/users/:id', [verifyRole, verifyToken], (req, res) => {
 router.delete('/api/users/delete/:id', [verifyRole, verifyToken], (req, res) => {
 
     UserController.delete(req, res);
-    
+
 });
 
 module.exports = router;
