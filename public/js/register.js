@@ -1,11 +1,11 @@
 function intialize() {
   var element = document.querySelector("body");
   element.style.height = window.innerHeight + "px";
-  var user = document.getElementById("user");
+  /*var user = document.getElementById("user");
   var pass = document.getElementById("pass");
   user.addEventListener("input", validate);
   pass.addEventListener("input", validate);
-  validate();
+  validate();*/
 
   setTimeout(function() {
     var element = document.getElementsByClassName('modal')[0];

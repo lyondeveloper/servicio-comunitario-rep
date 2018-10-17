@@ -202,15 +202,20 @@ body {
 .data label {
   margin-top: 10px;
 }
-.data input, .data select {
+.data input {
   padding: 10px;
   border-radius: 5px;
   height: 16px;
   font-size: 14px;
-  text-transform: capitalize;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
-.data input:focus, .data select:focus {
+.data input[type="text"] {
+  text-transform: capitalize;
+}
+.data input[list] {
+  text-transform: none;
+}
+.data input:focus {
   box-shadow: 0 0 10px 2px turquoise;
 }
 .btn {

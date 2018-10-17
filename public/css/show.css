@@ -184,9 +184,10 @@ body {
   float: left;
   width: 25%;
   border-radius: 0 20px 20px 0;
-  background-color: darkorange;
+  background-image: radial-gradient(orange 20%, darkorange 100%);
   padding: 12px 20px;
   cursor: pointer;
+  color: white;
 }
 
 /* Form */

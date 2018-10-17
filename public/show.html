@@ -5,7 +5,6 @@
   <title>Mostrar - Aplicación Web</title>
   <link rel="stylesheet" href="css/show.css">
   <link rel="icon" href="css/images/logo-school-icon.png" type="image/png">
-  <script src="js/store.js"></script>
   <script src="js/show.js"></script>
 </head>
 <body>
@@ -29,8 +28,8 @@
 
   <!-- Search -->
   <form class="search">
-    <input type="search" id="searchByName" placeholder="Buscar por nombre..." value="javier" autocomplete="off">
-    <button type="submit" class="searchBtn">Buscar</button>
+    <input type="search" id="searchByName" placeholder="Buscar por nombre..." autocomplete="off">
+    <button type="button" class="searchBtn" id="searchBtn">Buscar</button>
   </form>
 
   <!-- Steps -->
@@ -70,39 +69,39 @@
         <!-- Student's Data -->
         <label for="names">Nombres</label>
         <label for="lastnames">Apellidos</label>
-        <input type="text" name="names" placeholder="Nombres">
-        <input type="text" name="lastnames" placeholder="Apellidos">
+        <input type="text" name="names" placeholder="Nombres" disabled>
+        <input type="text" name="lastnames" placeholder="Apellidos" disabled>
         <label for="identification">Cédula</label>
         <label for="genre">Sexo</label>
-        <input type="text" name="identification" placeholder="Cédula del Alumno">
-        <input type="text" name="genre" list="data" placeholder="Sexo del Alumno">
+        <input type="text" name="identification" placeholder="Cédula del Alumno" disabled>
+        <input type="text" name="genre" list="data" placeholder="Sexo del Alumno" disabled>
 
         <label for="birthday">Fecha de Nacimiento</label>
         <label for="birthplace">Lugar de Nacimiento</label>
-        <input type="date" name="birthday" placeholder="Fecha de Nacimiento">
-        <input type="text" name="birthplace" placeholder="Lugar de Nacimiento">
+        <input type="date" name="birthday" placeholder="Fecha de Nacimiento" disabled>
+        <input type="text" name="birthplace" placeholder="Lugar de Nacimiento" disabled>
         <label for="municipality">Municipio</label>
         <label for="country">Entidad Federal / País</label>
-        <input type="text" name="municipality" placeholder="Municipio">
-        <input type="text" name="country" placeholder="Entidad Federal / País">
+        <input type="text" name="municipality" placeholder="Municipio" disabled>
+        <input type="text" name="country" placeholder="Entidad Federal / País" disabled>
 
         <label for="age">Edad</label>
         <label for="weight">Peso</label>
-        <input type="number" name="age" placeholder="Edad del Alumno" min="0" max="120" step="1">
-        <input type="number" name="weight" placeholder="Peso del Alumno" min="0" max="120" step="1">
+        <input type="number" name="age" placeholder="Edad del Alumno" min="0" max="120" step="1" disabled>
+        <input type="number" name="weight" placeholder="Peso del Alumno" min="0" max="120" step="1" disabled>
         <label for="height">Estatura</label>
         <label for="shirtsize">Talla de Camisa</label>
-        <input type="number" name="height" placeholder="Estatura del Alumno" min="0" max="300" step="1">
-        <input type="text" name="shirtsize" list="size" placeholder="Talla de Camisa">
+        <input type="number" name="height" placeholder="Estatura del Alumno" min="0" max="300" step="1" disabled>
+        <input type="text" name="shirtsize" list="size" placeholder="Talla de Camisa" disabled>
 
         <label for="pantsize">Talla de Pantalón</label>
         <label for="shoesize">Talla de Zapato</label>
-        <input type="text" name="pantsize" list="size" placeholder="Talla de Pantalón">
-        <input type="text" name="shoesize" list="size" placeholder="Talla de Zapato">
+        <input type="text" name="pantsize" list="size" placeholder="Talla de Pantalón" disabled>
+        <input type="text" name="shoesize" list="size" placeholder="Talla de Zapato" disabled>
         <label for="livewith">¿Vive con sus padres?</label>
         <label for="address">Dirección</label>
-        <input type="text" name="livewith" list="yesno" placeholder="¿Si/No?">
-        <input type="text" name="address" placeholder="Dirección del Alumno">
+        <input type="text" name="livewith" list="yesno" placeholder="¿Si/No?" disabled>
+        <input type="text" name="address" placeholder="Dirección del Alumno" disabled>
 
         <button type="button" class="next btn">Siguiente</button>
       </div>
@@ -115,29 +114,29 @@
         <!-- Mother's Data -->
         <label for="mother-names">Nombres</label>
         <label for="mother-lastnames">Apellidos</label>
-        <input type="text" name="mother-names" placeholder="Nombres">
-        <input type="text" name="mother-lastnames" placeholder="Apellidos">
+        <input type="text" name="mother-names" placeholder="Nombres" disabled>
+        <input type="text" name="mother-lastnames" placeholder="Apellidos" disabled>
         <label for="mother-identification">Cédula</label>
         <label for="mother-birthday">Fecha de Nacimiento</label>
-        <input type="text" name="mother-identification" placeholder="Cédula">
-        <input type="date" name="mother-birthday" placeholder="Fecha de Nacimiento">
+        <input type="text" name="mother-identification" placeholder="Cédula" disabled>
+        <input type="date" name="mother-birthday" placeholder="Fecha de Nacimiento" disabled>
 
         <label for="mother-age">Edad</label>
         <label for="mother-civil">Estado Civil</label>
-        <input type="number" name="mother-age" placeholder="Edad" min="0" max="120" step="1">
-        <input type="text" name="mother-civil" list="civil" placeholder="Estado Civil">
+        <input type="number" name="mother-age" placeholder="Edad" min="0" max="120" step="1" disabled>
+        <input type="text" name="mother-civil" list="civil" placeholder="Estado Civil" disabled>
         <label for="mother-ocupation">Ocupación</label>
         <label for="mother-company">Empresa dónde labora</label>
-        <input type="text" name="mother-ocupation" placeholder="Ocupación">
-        <input type="text" name="mother-company" placeholder="Empresa">
+        <input type="text" name="mother-ocupation" placeholder="Ocupación" disabled>
+        <input type="text" name="mother-company" placeholder="Empresa" disabled>
 
         <label for="mother-address">Dirección de Habitación</label>
         <label for="mother-phone">Teléfonos de Ubicación</label>
-        <input type="text" name="mother-address" placeholder="Dirección">
-        <input type="text" name="mother-phone" placeholder="Teléfonos">
+        <input type="text" name="mother-address" placeholder="Dirección" disabled>
+        <input type="text" name="mother-phone" placeholder="Teléfonos" disabled>
         <label for="mother-livewith">¿Vive con el niño?</label>
         <label for=""></label>
-        <input type="text" name="mother-livewith" list="yesno" placeholder="¿Si/No?">
+        <input type="text" name="mother-livewith" list="yesno" placeholder="¿Si/No?" disabled>
         <label for=""></label>
 
         <button type="button" class="prev btn">Anterior</button>
@@ -152,29 +151,29 @@
         <!-- Father's Data -->
         <label for="father-names">Nombres</label>
         <label for="father-lastnames">Apellidos</label>
-        <input type="text" name="father-names" placeholder="Nombres">
-        <input type="text" name="father-lastnames" placeholder="Apellidos">
+        <input type="text" name="father-names" placeholder="Nombres" disabled>
+        <input type="text" name="father-lastnames" placeholder="Apellidos" disabled>
         <label for="father-identification">Cédula</label>
         <label for="father-birthday">Fecha de Nacimiento</label>
-        <input type="text" name="father-identification" placeholder="Cédula">
-        <input type="date" name="father-birthday" placeholder="Fecha de Nacimiento">
+        <input type="text" name="father-identification" placeholder="Cédula" disabled>
+        <input type="date" name="father-birthday" placeholder="Fecha de Nacimiento" disabled>
 
         <label for="father-age">Edad</label>
         <label for="father-civil">Estado Civil</label>
-        <input type="number" name="father-age" placeholder="Edad" min="0" max="120" step="1">
-        <input type="text" name="father-civil" list="civil" placeholder="Estado Civil">
+        <input type="number" name="father-age" placeholder="Edad" min="0" max="120" step="1" disabled>
+        <input type="text" name="father-civil" list="civil" placeholder="Estado Civil" disabled>
         <label for="father-ocupation">Ocupación</label>
         <label for="father-company">Empresa dónde labora</label>
-        <input type="text" name="father-ocupation" placeholder="Ocupación">
-        <input type="text" name="father-company" placeholder="Empresa">
+        <input type="text" name="father-ocupation" placeholder="Ocupación" disabled>
+        <input type="text" name="father-company" placeholder="Empresa" disabled>
 
         <label for="father-address">Dirección de Habitación</label>
         <label for="father-phone">Teléfonos de Ubicación</label>
-        <input type="text" name="father-address" placeholder="Dirección">
-        <input type="text" name="father-phone" placeholder="Teléfonos">
+        <input type="text" name="father-address" placeholder="Dirección" disabled>
+        <input type="text" name="father-phone" placeholder="Teléfonos" disabled>
         <label for="father-livewith">¿Vive con el niño?</label>
         <label for=""></label>
-        <input type="text" name="father-livewith" list="yesno" placeholder="¿Si/No?">
+        <input type="text" name="father-livewith" list="yesno" placeholder="¿Si/No?" disabled>
         <label for=""></label>
 
         <button type="button" class="prev btn">Anterior</button>
@@ -189,29 +188,29 @@
         <!-- Representative's Data -->
         <label for="repre-names">Nombres</label>
         <label for="repre-lastnames">Apellidos</label>
-        <input type="text" name="repre-names" placeholder="Nombres">
-        <input type="text" name="repre-lastnames" placeholder="Apellidos">
+        <input type="text" name="repre-names" placeholder="Nombres" disabled>
+        <input type="text" name="repre-lastnames" placeholder="Apellidos" disabled>
         <label for="repre-identification">Cédula</label>
         <label for="repre-birthday">Fecha de Nacimiento</label>
-        <input type="text" name="repre-identification" placeholder="Cédula">
-        <input type="date" name="repre-birthday" placeholder="Fecha de Nacimiento">
+        <input type="text" name="repre-identification" placeholder="Cédula" disabled>
+        <input type="date" name="repre-birthday" placeholder="Fecha de Nacimiento" disabled>
 
         <label for="repre-age">Edad</label>
         <label for="repre-civil">Estado Civil</label>
-        <input type="number" name="repre-age" placeholder="Edad" min="0" max="120" step="1">
-        <input type="text" name="repre-civil" list="civil" placeholder="Estado Civil">
+        <input type="number" name="repre-age" placeholder="Edad" min="0" max="120" step="1" disabled>
+        <input type="text" name="repre-civil" list="civil" placeholder="Estado Civil" disabled>
         <label for="repre-ocupation">Ocupación</label>
         <label for="repre-company">Empresa dónde labora</label>
-        <input type="text" name="repre-ocupation" placeholder="Ocupación">
-        <input type="text" name="repre-company" placeholder="Empresa">
+        <input type="text" name="repre-ocupation" placeholder="Ocupación" disabled>
+        <input type="text" name="repre-company" placeholder="Empresa" disabled>
 
         <label for="repre-address">Dirección de Habitación</label>
         <label for="repre-phone">Teléfonos de Ubicación</label>
-        <input type="text" name="repre-address" placeholder="Dirección">
-        <input type="text" name="repre-phone" placeholder="Teléfonos">
+        <input type="text" name="repre-address" placeholder="Dirección" disabled>
+        <input type="text" name="repre-phone" placeholder="Teléfonos" disabled>
         <label for="repre-livewith">¿Vive con el niño?</label>
         <label for=""></label>
-        <input type="text" name="repre-livewith" list="yesno" placeholder="¿Si/No?">
+        <input type="text" name="repre-livewith" list="yesno" placeholder="¿Si/No?" disabled>
 
         <button type="button" class="prev btn">Anterior</button>
         <button type="button" class="submit btn">Guardar</button>
