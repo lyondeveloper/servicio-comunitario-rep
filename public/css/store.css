@@ -135,7 +135,7 @@ body {
   list-style-type: none;
   color: white;
   text-transform: uppercase;
-  width: 25%;
+  width: 33.33%;
   float: left;
   position: relative;
   text-align: center;
@@ -207,7 +207,11 @@ body {
   border-radius: 5px;
   height: 16px;
   font-size: 14px;
+  width: calc(100% - 20px);
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+.data input[type="date"] {
+  background-color: white;
 }
 .data input[type="text"] {
   text-transform: capitalize;

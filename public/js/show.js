@@ -3,11 +3,10 @@ var animating;
 function initialize() {
   var nextButtons = document.getElementsByClassName('next');
   var prevButtons = document.getElementsByClassName('prev');
-  /*var searchButton = document.getElementById('searchBtn');
+  var searchButton = document.getElementById('searchBtn');
   searchButton.addEventListener("click", function() {
-    Ajax('GET', '../js/Data.json');
-    console.log('Ajax');
-  });*/
+    Ajax('../js/data.json');
+  });
 
   for (var i = 0; i < nextButtons.length; i++) {
     var button = nextButtons[i];
@@ -25,15 +24,24 @@ function initialize() {
 }
 
 //Send Ajax request
-function Ajax(method, url) {
+function Ajax(url) {
   req = new XMLHttpRequest();
   req.onreadystatechange = function() {
     if (this.status === 200 && this.readyState === 4) {
       responseObject = JSON.parse(req.responseText);
+      //fillForm(responseObject.student);
+      fillForm(responseObject.student.parent);
+      //fillForm(responseObject.represent);
     }
   };
-  req.open(method, url, true);
+  req.open('GET', url, true);
   req.send(null);
+}
+
+function fillForm(array) {
+  for(var key in array) {
+    document.querySelector('[name="' + key + '"]').value = array[key];
+  }
 }
 
 //Fade effect

@@ -1,0 +1,22 @@
+{
+  "student": {
+    "name":"Javier José Zabala Bislip",
+    "identification":"27139858",
+    "sex":"Masculino",
+    "birthday":"14/10/1999",
+
+    "parent": {
+      "parentName":"Javier José Zabala Campos",
+      "parentIdentification":"7739833",
+      "parentSex":"Masculino",
+      "parentBirthday":"12/12/1962"
+    },
+
+    "represent": {
+      "representName":"Maribel Coromoto Bislip de Zabala",
+      "representID":"10214969",
+      "representSex":"Femenino",
+      "representBirthday":"09/08/1968"
+    }
+  }
+}

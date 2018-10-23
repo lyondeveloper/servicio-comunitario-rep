@@ -1,8 +1,8 @@
-var animating;
+var animating, form;
 
 function initialize() {
-  var nextButtons = document.getElementsByClassName('next');
-  var prevButtons = document.getElementsByClassName('prev');
+  var nextButtons = document.getElementsByClassName("next");
+  var prevButtons = document.getElementsByClassName("prev");
   for (var i = 0; i < nextButtons.length; i++) {
     var button = nextButtons[i];
     button.addEventListener("click", nextButton);
@@ -11,11 +11,31 @@ function initialize() {
     var button = prevButtons[i];
     button.addEventListener("click", prevButton);
   }
+  form = document.getElementsByClassName("main")[0];
+  var submit = document.getElementById("submit");
+  submit.addEventListener("click", sendForm);
 
   setTimeout(function() {
     var element = document.getElementsByClassName('modal')[0];
     element.style.display = 'none';
   }, 2000);
+}
+
+function sendForm() {
+  var formData = new FormData(form);
+  ajax('/api/register/create', formData);
+}
+
+function ajax(url, data) {
+  var req = new XMLHttpRequest();
+  req.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //No response
+      window.location.reload();
+    }
+  };
+  req.open('POST', url);
+  req.send(data);
 }
 
 //Fade effect
