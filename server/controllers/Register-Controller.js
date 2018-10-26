@@ -277,7 +277,7 @@ class RegisterController {
             //Represent data
             student.represent.name = body.representName;
             student.represent.sex = body.representSex;
-            student.represent.identification = body.representIdentification;
+            student.represent.identification = body.representID;
             student.represent.birthday = body.representBirthday;
             student.represent.age = body.representAge;
             student.represent.civilState = body.representCivilState;

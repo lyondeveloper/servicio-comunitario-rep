@@ -101,7 +101,7 @@ body {
   text-decoration: none;
   text-align: center;
   color: black;
-  padding: 10px 0;
+  padding: 15px 0;
 }
 .main-nav > ul a:hover {
   background-color:lightskyblue;
@@ -129,6 +129,7 @@ body {
 }
 
 .progressbar {
+  opacity: 0;
   counter-reset: step;
 }
 .progressbar li {
@@ -191,7 +192,8 @@ body {
 }
 
 /* Form */
-.form {
+.main {
+  opacity: 0;
   display: grid;
   grid-gap: 20px;
 }
@@ -223,12 +225,13 @@ body {
   margin-top: 10px;
 }
 .data input {
-  padding: 10px;
+  padding: 10px 35px 10px 10px;
   border-radius: 5px;
-  height: 16px;
+  height: 36px;
   font-size: 14px;
-  width: calc(100% - 20px);
+  width: 100%;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
 }
 .data input[type="text"] {
   text-transform: capitalize;
@@ -262,6 +265,18 @@ body {
 }
 .next, .submit {
   grid-column: 2 / 3;
+}
+
+/* Valid */
+.data input:valid {
+  background-image: url('images/th-green-icon-small.jpg');
+  background-position: 97% 5px;
+  background-repeat: no-repeat;
+}
+.data input:invalid {
+  background-image: url('images/th-red-icon-small.jpg');
+  background-position: 97% 5px;
+  background-repeat: no-repeat;
 }
 
 /* Footer */

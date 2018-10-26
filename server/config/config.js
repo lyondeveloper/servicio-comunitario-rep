@@ -36,7 +36,7 @@ process.env.TOKEN_EXPIRATION = 60 * 60 * 60 * 60;
 
 if (process.env.NODE_ENV === "dev") {
 
-    process.env.MONGOURI = "mongodb://localhost:27017/ServicioComunitarioDB";
+    process.env.MONGOURI = "mongodb://localhost:27017/GENBolivarianoDB";
 
 } else {
 

@@ -39,9 +39,9 @@ let verifyToken = (req, res, next) => {
 
 let verifyRole = (req, res, next) => {
 
-    let user = req.user;
+    let body = req.body;
 
-    if (user.role !== 'SUPER_ADMIN') {
+    if (body.role !== 'SUPER_ADMIN') {
 
         return res.status(500).json({
 

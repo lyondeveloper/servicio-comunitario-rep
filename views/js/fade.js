@@ -1,49 +1,5 @@
 var animating;
 
-function initialize() {
-  var nextButtons = document.getElementsByClassName('next');
-  var prevButtons = document.getElementsByClassName('prev');
-  var searchButton = document.getElementById('searchBtn');
-  searchButton.addEventListener("click", function() {
-    Ajax('../js/data.json');
-  });
-
-  for (var i = 0; i < nextButtons.length; i++) {
-    var button = nextButtons[i];
-    button.addEventListener("click", nextButton);
-  }
-  for (var i = 0; i < prevButtons.length; i++) {
-    var button = prevButtons[i];
-    button.addEventListener("click", prevButton);
-  }
-
-  setTimeout(function() {
-    var element = document.getElementsByClassName('modal')[0];
-    element.style.display = 'none';
-  }, 2000);
-}
-
-//Send Ajax request
-function Ajax(url) {
-  req = new XMLHttpRequest();
-  req.onreadystatechange = function() {
-    if (this.status === 200 && this.readyState === 4) {
-      responseObject = JSON.parse(req.responseText);
-      //fillForm(responseObject.student);
-      fillForm(responseObject.student.parent);
-      //fillForm(responseObject.represent);
-    }
-  };
-  req.open('GET', url, true);
-  req.send(null);
-}
-
-function fillForm(array) {
-  for(var key in array) {
-    document.querySelector('[name="' + key + '"]').value = array[key];
-  }
-}
-
 //Fade effect
 function nextButton(e) {
   var current = e.target.parentNode.parentNode;
@@ -78,7 +34,7 @@ function nextButton(e) {
       }, 50);
     }
   }, 50);
-  document.documentElement.scrollTop = 225;
+  document.documentElement.scrollTop = 165;
 }
 
 //Fade effect
@@ -115,9 +71,10 @@ function prevButton(e) {
       }, 50);
     }
   }, 50);
-  document.documentElement.scrollTop = 225;
+  document.documentElement.scrollTop = 165;
 }
 
+//Returns index in parent
 function indexInParent(node) {
   var children = node.parentNode.childNodes;
   var num = 0;
@@ -128,4 +85,5 @@ function indexInParent(node) {
   return -1;
 }
 
-window.addEventListener("load", initialize);
+//Exporting module
+export {nextButton, prevButton};

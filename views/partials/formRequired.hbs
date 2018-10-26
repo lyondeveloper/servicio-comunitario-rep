@@ -1,0 +1,139 @@
+  {{>steps}}
+
+  <!-- Main Form -->
+  <form class="main" id="main">
+    <div class="fieldset">
+      <div class="title">
+        <h4>Estudiante</h4>
+      </div>
+      <div class="data">
+        <datalist id="sex">
+          <option value="Masculino" label="Sexo">
+          <option value="Femenino" label="Sexo">
+        </datalist>
+        <datalist id="yesno">
+          <option value="Si" label="¿Si/No?">
+          <option value="No" label="¿Si/No?">
+        </datalist>
+        <datalist id="civil">
+          <option value="Casado/a" label="¿Si/No?">
+          <option value="Soltero/a" label="¿Si/No?">
+          <option value="Viudo/a" label="¿Si/No?">
+        </datalist>
+
+        <!-- Student's Data -->
+        <label for="name">Nombres Y Apellidos</label>
+        <label for="identification">Cédula</label>
+        <input type="text" name="name" placeholder="Nombres Y Apellidos" required autocomplete="off">
+        <input type="number" name="identification" placeholder="Cédula" min="0" required autocomplete="off">
+        <label for="sex">Sexo</label>
+        <label for="birthday">Fecha de Nacimiento</label>
+        <input type="text" name="sex" list="sex" placeholder="Sexo" required autocomplete="off">
+        <input type="date" name="birthday" required autocomplete="off">
+
+        <label for="birthdayPlace">Lugar de Nacimiento</label>
+        <label for="municipality">Municipio</label>
+        <input type="text" name="birthdayPlace" placeholder="Lugar de Nacimiento" required autocomplete="off">
+        <input type="text" name="municipality" placeholder="Municipio" required autocomplete="off">
+        <label for="country">Entidad Federal / País</label>
+        <label for="age">Edad</label>
+        <input type="text" name="country" placeholder="Entidad Federal / País" required autocomplete="off">
+        <input type="number" name="age" placeholder="Edad" min="0" max="120" step="1" required autocomplete="off">
+
+        <label for="weight">Peso</label>
+        <label for="height">Estatura</label>
+        <input type="number" name="weight" placeholder="Peso" min="0" max="120" step="1" required autocomplete="off">
+        <input type="number" name="height" placeholder="Estatura" min="0" max="300" step="1" required autocomplete="off">
+        <label for="shirtSize">Talla de Camisa</label>
+        <label for="pantSize">Talla de Pantalón</label>
+        <input type="number" name="shirtSize" list="size" placeholder="Talla de Camisa" min="0" max="40" step="1" required autocomplete="off">
+        <input type="number" name="pantSize" list="size" placeholder="Talla de Pantalón" min="0" max="40" step="1" required autocomplete="off">
+
+        <label for="shoeSize">Talla de Zapato</label>
+        <label for="liveWithParents">¿Vive con sus padres?</label>
+        <input type="number" name="shoeSize" list="size" placeholder="Talla de Zapato" min="0" max="40" step="1" required autocomplete="off">
+        <input type="text" name="liveWithParents" list="yesno" placeholder="¿Si/No?" required autocomplete="off">
+        <label for="direction">Dirección</label>
+        <label for="phoneNumber">Teléfono</label>
+        <input type="text" name="direction" placeholder="Dirección" required autocomplete="off">
+        <input type="number" name="phoneNumber" placeholder="Teléfono" required autocomplete="off">
+
+        <label for="impedimentToSports">Impedimento A Deportes</label>
+        <label for="alergicTo">Alérgico A</label>
+        <input type="text" name="impedimentToSports" placeholder="Impedimento A Deportes" required autocomplete="off">
+        <input type="text" name="alergicTo" placeholder="Alérgico A" required autocomplete="off">
+
+        <button type="button" class="next btn">Siguiente</button>
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="title">
+        <h4>Padre</h4>
+      </div>
+      <div class="data">
+        <!-- Parent's Data -->
+        <label for="parentName">Nombres Y Apellidos</label>
+        <label for="parentSex">Sexo</label>
+        <input type="text" name="parentName" placeholder="Nombres Y Apellidos" required autocomplete="off">
+        <input type="text" name="parentSex" list="sex" placeholder="Sexo" required autocomplete="off">
+        <label for="parentIdentification">Cédula</label>
+        <label for="parentBirthday">Fecha de Nacimiento</label>
+        <input type="number" name="parentIdentification" placeholder="Cédula" min="0" required autocomplete="off">
+        <input type="date" name="parentBirthday" required autocomplete="off">
+
+        <label for="parentCompany">Empresa dónde labora</label>
+        <label for="parentCivilState">Estado Civil</label>
+        <input type="text" name="parentCompany" placeholder="Empresa dónde labora" required autocomplete="off">
+        <input type="text" name="parentCivilState" list="civil" placeholder="Estado Civil" required autocomplete="off">
+        <label for="parentOcupation">Ocupación</label>
+        <label for="parentDirection">Dirección de Habitación</label>
+        <input type="text" name="parentOcupation" placeholder="Ocupación" required autocomplete="off">
+        <input type="text" name="parentDirection" placeholder="Dirección de Habitación" required autocomplete="off">
+
+        <label for="parentPhoneNumber1">Teléfono 1</label>
+        <label for="parentPhoneNumber2">Teléfono 2</label>
+        <input type="number" name="parentPhoneNumber1" placeholder="Teléfono 1" required autocomplete="off">
+        <input type="number" name="parentPhoneNumber2" placeholder="Teléfono 2" required autocomplete="off">
+        <label for="liveWithKid">¿Vive con el niño?</label>
+        <label for=""></label>
+        <input type="text" name="liveWithKid" list="yesno" placeholder="¿Si/No?" required autocomplete="off">
+        <label for=""></label>
+
+        <button type="button" class="prev btn">Anterior</button>
+        <button type="button" class="next btn">Siguiente</button>
+      </div>
+    </div>
+    <div class="fieldset">
+      <div class="title">
+        <h4>Representante</h4>
+      </div>
+      <div class="data">
+        <!-- Representative's Data -->
+        <label for="representName">Nombres Y Apellidos</label>
+        <label for="representSex">Sexo</label>
+        <input type="text" name="representName" placeholder="Nombres Y Apellidos" required autocomplete="off">
+        <input type="text" name="representSex" list="sex" placeholder="Sexo" required autocomplete="off">
+        <label for="representID">Cédula</label>
+        <label for="representBirthday">Fecha de Nacimiento</label>
+        <input type="number" name="representID" placeholder="Cédula" required autocomplete="off">
+        <input type="date" name="representBirthday" required autocomplete="off">
+
+        <label for="representAge">Edad</label>
+        <label for="representCivilState">Estado Civil</label>
+        <input type="number" name="representAge" placeholder="Edad" min="0" max="120" step="1" required autocomplete="off">
+        <input type="text" name="representCivilState" list="civil" placeholder="Estado Civil" required autocomplete="off">
+        <label for="representOcupation">Ocupación</label>
+        <label for="representCompany">Empresa dónde labora</label>
+        <input type="text" name="representOcupation" placeholder="Ocupación" required autocomplete="off">
+        <input type="text" name="representCompany" placeholder="Empresa" required autocomplete="off">
+
+        <label for="representDirection">Dirección de Habitación</label>
+        <label for="representPhoneNumber1">Teléfono 1</label>
+        <input type="text" name="representDirection" placeholder="Dirección" required autocomplete="off">
+        <input type="number" name="representPhoneNumber1" placeholder="Teléfono 1" required autocomplete="off">
+        <label for="representPhoneNumber2">Teléfono 2</label>
+        <label for=""></label>
+        <input type="number" name="representPhoneNumber2" placeholder="Teléfono 2" required autocomplete="off">
+        <label for=""></label>
+
+        <button type="button" class="prev btn">Anterior</button>

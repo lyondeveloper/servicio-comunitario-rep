@@ -11,7 +11,7 @@ let validSexType = {
 
 let validCivilState = {
 
-    values: ['Casado', 'Soltero', 'Viudo'],
+    values: ['Casado/a', 'Soltero/a', 'Viudo/a'],
     message: "{VALUE} is not a valid civil state"
 
 }

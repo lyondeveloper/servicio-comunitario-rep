@@ -121,7 +121,7 @@ class UserController {
                 });
 
             }
-
+            
             res.json({
 
                 ok: true,
@@ -176,9 +176,9 @@ class UserController {
 
         let id = req.params.id;
 
-        let body = _.pick(req.body, ['name', 'email', 'birthday', 'role', 'identification']);
+        let body = _.pick(req.body, ['online']);
 
-        User.findOneAndUpdate(id, body, {new: true}, (err, userUpdated) => {
+        User.findOneAndUpdate({_id: id}, body, {new: true}, (err, userUpdated) => {
 
             if (err) {
 
@@ -201,7 +201,7 @@ class UserController {
                 });
 
             }
-
+            
             res.json({
 
                 userUpdated

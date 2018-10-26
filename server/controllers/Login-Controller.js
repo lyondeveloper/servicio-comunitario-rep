@@ -45,6 +45,17 @@ class LoginController {
 
             }
 
+            if (userLogged.online == true) {
+
+              return res.status(401).json({
+
+                  ok: false,
+                  message: "User already logged in"
+
+              });
+
+            }
+
             let token = jwt.sign({
 
                 user: userLogged
@@ -60,8 +71,9 @@ class LoginController {
                 ok: true,
                 userLogged,
                 message: "You have logged in succesfully",
+                expiresIn: process.env.TOKEN_EXPIRATION,
                 token
-
+                
             });
 
         });

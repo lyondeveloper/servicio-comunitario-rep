@@ -6,12 +6,15 @@ const http = require('http');
 const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const hbs = require('hbs');
 
-//middlewares
-app.use(express.static(path.resolve(__dirname, '../public')));
+//Middlewares
+app.use(express.static(path.resolve(__dirname, '../views')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(require('./routes/routes'));
+hbs.registerPartials(path.resolve(__dirname, '../views/partials'));
+app.set('view engine', 'hbs');
 
 const server = http.createServer(app);
 
