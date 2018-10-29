@@ -137,7 +137,7 @@ class UserController {
 
         let identification = req.params.identification;
 
-        User.findOne({identification}, (err, user) => {
+        User.findOne({_id: identification}, (err, user) => {
 
             if (err) {
 

@@ -1,0 +1,63 @@
+  <!-- Main Form -->
+  <form class="main" id="main">
+    <div class="fieldset">
+      <div class="title">
+        <h4>Estudiante</h4>
+      </div>
+      <div class="data">
+        <datalist id="sex">
+          <option value="Masculino" label="Sexo">
+          <option value="Femenino" label="Sexo">
+        </datalist>
+        <datalist id="yesno">
+          <option value="Si" label="¿Si/No?">
+          <option value="No" label="¿Si/No?">
+        </datalist>
+        <datalist id="civil">
+          <option value="Casado/a" label="¿Si/No?">
+          <option value="Soltero/a" label="¿Si/No?">
+          <option value="Viudo/a" label="¿Si/No?">
+        </datalist>
+
+        <!-- Student's Data -->
+        <label for="name">Nombres Y Apellidos</label>
+        <label for="identification">Cédula</label>
+        <input type="text" name="name" placeholder="Nombres Y Apellidos" pattern="[A-Za-z ]{1,}" maxlength="30" required autocomplete="off">
+        <input type="number" name="identification" placeholder="Cédula" pattern="[0-9]{1,}" maxlength="8" required autocomplete="off">
+        <label for="sex">Sexo</label>
+        <label for="birthday">Fecha de Nacimiento</label>
+        <input type="text" name="sex" list="sex" placeholder="Sexo" max="9" required autocomplete="off">
+        <input type="date" name="birthday" required autocomplete="off">
+
+        <label for="birthdayPlace">Lugar de Nacimiento</label>
+        <label for="municipality">Municipio</label>
+        <input type="text" name="birthdayPlace" placeholder="Lugar de Nacimiento" pattern="[A-Za-z ]{1,}" maxlength="30" required autocomplete="off">
+        <input type="text" name="municipality" placeholder="Municipio" pattern="[A-Za-z ]{1,}" maxlength="30" required autocomplete="off">
+        <label for="country">Entidad Federal / País</label>
+        <label for="age">Edad</label>
+        <input type="text" name="country" placeholder="Entidad Federal / País" pattern="[A-Za-z ]{1,}" maxlength="30" required autocomplete="off">
+        <input type="number" name="age" placeholder="Edad" pattern="[0-9]{1,}" maxlength="3" min="0" max="120" step="1" required autocomplete="off">
+
+        <label for="weight">Peso</label>
+        <label for="height">Estatura</label>
+        <input type="number" name="weight" placeholder="Peso" pattern="[0-9]{1,}" maxlength="3" min="0" max="500" step="1" required autocomplete="off">
+        <input type="number" name="height" placeholder="Estatura" pattern="[0-9]{1,}" maxlength="3" min="0" max="500" step="1" required autocomplete="off">
+        <label for="shirtSize">Talla de Camisa</label>
+        <label for="pantSize">Talla de Pantalón</label>
+        <input type="number" name="shirtSize" list="size" placeholder="Talla de Camisa" pattern="[0-9]{1,}" maxlength="2" min="0" max="500" step="1" required autocomplete="off">
+        <input type="number" name="pantSize" list="size" placeholder="Talla de Pantalón" pattern="[0-9]{1,}" maxlength="2" min="0" max="500" step="1" required autocomplete="off">
+
+        <label for="shoeSize">Talla de Zapato</label>
+        <label for="liveWithParents">¿Vive con sus padres?</label>
+        <input type="number" name="shoeSize" list="size" placeholder="Talla de Zapato" pattern="[0-9]{1,}" maxlength="2" min="0" max="500" step="1" required autocomplete="off">
+        <input type="text" name="liveWithParents" list="yesno" placeholder="¿Si/No?" pattern="[A-Za-z]{1,}" maxlength="2" required autocomplete="off">
+        <label for="direction">Dirección</label>
+        <label for="phoneNumber">Teléfono</label>
+        <input type="text" name="direction" placeholder="Dirección" pattern="[A-Za-z0-9 ]{1,}" maxlength="30" required autocomplete="off">
+        <input type="number" name="phoneNumber" placeholder="Teléfono" pattern="[0-9]{1,}" maxlength="11" required autocomplete="off">
+
+        <label for="impedimentToSports">Impedimento A Deportes</label>
+        <label for="alergicTo">Alérgico A</label>
+        <input type="text" name="impedimentToSports" placeholder="Impedimento A Deportes" pattern="[A-Za-z ]{1,}" maxlength="30" required autocomplete="off">
+        <input type="text" name="alergicTo" placeholder="Alérgico A" pattern="[A-Za-z ]{1,}" maxlength="30" required autocomplete="off">
+      </div>

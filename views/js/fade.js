@@ -21,7 +21,7 @@ function nextButton(e) {
     } else {
       clearInterval(hide);
       current.style.display = 'none';
-      next.style.display = 'block';
+      next.style.display = 'grid';
       next.style.opacity = '0';
       //Show next
       var show = setInterval(function() {
@@ -58,7 +58,7 @@ function prevButton(e) {
     } else {
       clearInterval(hide);
       current.style.display = 'none';
-      prev.style.display = 'block';
+      prev.style.display = 'grid';
       prev.style.opacity = '0';
       //Show prev
       var show = setInterval(function() {

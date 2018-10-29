@@ -99,7 +99,7 @@ class RegisterController {
         .find()
         .skip(from)
         .limit(limit)
-        .sort('name')
+        .sort('-name')
         .exec((err, students) => {
 
             if (err) {
@@ -139,6 +139,50 @@ class RegisterController {
         });
 
     }
+
+    getAllByName(req, res) {
+
+      let name = req.params.name;
+
+      let regexp = new RegExp(name, 'i');
+
+      Student
+      .find({name: regexp})
+      .sort('-name')
+      .exec((error, students) => {
+
+          if (error) {
+
+              return res.status(500).json({
+
+                  ok: false,
+                  err
+
+              });
+
+          }
+
+          if (!students) {
+
+              return res.status(401).json({
+
+                  ok: false,
+                  message: "Maybe the user doesn't exist"
+
+              });
+
+          }
+
+          res.json({
+
+              ok: true,
+              students
+
+          });
+
+      }); 
+
+  } 
 
     getByName(req, res) {
 

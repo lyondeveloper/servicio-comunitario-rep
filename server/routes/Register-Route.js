@@ -22,6 +22,12 @@ router.get('/api/register/getByName/:name', verifyToken, (req, res) => {
 
 });
 
+router.get('/api/register/getAllByName/:name', verifyToken, (req, res) => {
+    
+    RegisterController.getAllByName(req, res);
+
+});
+
 router.put('/api/register/update/:id', verifyToken, (req, res) => {
 
     RegisterController.update(req, res);

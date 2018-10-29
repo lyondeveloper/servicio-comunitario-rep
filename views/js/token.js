@@ -9,6 +9,8 @@ function verifyToken() {
       window.location.assign('/');
       localStorage.removeItem('token');
       localStorage.removeItem('expirationDate');
+      localStorage.removeItem('id');
+      sessionStorage.removeItem('name');
     } else {
       var expiresIn = expirationDate.getTime() - new Date().getTime();
       logOut(expiresIn);
@@ -27,42 +29,12 @@ function logOut(timeout) {
 //Deletes token
 function deleteToken() {
 
-  //Sending ajax request to update online status
-  var url = '/api/users/getByName/' + localStorage.getItem('user')
-  var req = new XMLHttpRequest();
-
-  req.onreadystatechange = function() {
-
-    if (this.readyState == 4 && this.status == 200) {
-      var responseObject = JSON.parse(req.responseText);
-
-      //Sending ajax request to update online status
-      var req2 = new XMLHttpRequest();
-      responseObject.user.online = false;
-
-      req2.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          //Empty storage
-          localStorage.removeItem('token');
-          localStorage.removeItem('expirationDate');
-          localStorage.removeItem('user');
-          window.location.assign('/');
-        }
-      }
-
-      req2.open('PUT', '/api/users/' + responseObject.user._id, true);//Preparing req
-      req2.setRequestHeader('Content-type', 'application/json');
-      req2.setRequestHeader('token', localStorage.getItem('token'));
-      req2.send(JSON.stringify(responseObject.user));
-
-    }
-
-  }
-
-  req.open('GET', url, true);//Preparing req
-  req.setRequestHeader('Content-type', 'application/json');
-  req.setRequestHeader('token', localStorage.getItem('token'));
-  req.send(null);
+  localStorage.removeItem('token');
+  localStorage.removeItem('expirationDate');
+  localStorage.removeItem('id');
+  sessionStorage.removeItem('name');
+  window.location.assign('/');
+  
 }
 
 //Exporting module

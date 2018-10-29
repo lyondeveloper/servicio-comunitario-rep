@@ -1,0 +1,35 @@
+{{>head}}
+
+  <title>Eliminar Estudiante - Aplicación Web</title>
+  <link rel="stylesheet" href="css/show.css">
+  <script src="js/deleteStudent.js" type="module"></script>
+</head>
+<body>
+  
+  {{>nav}}
+
+  {{>steps}}
+
+  {{>studentDataDisabled}}
+
+      <div class="buttons">
+        <button type="button" class="next btn">Siguiente</button>
+        <button type="submit" class="submit btn" id="submit">Eliminar</button>
+      </div>
+
+  {{>parentDataDisabled}}
+
+      <div class="buttons">
+        <button type="button" class="prev btn">Anterior</button>
+        <button type="submit" class="submit btn" id="submit">Eliminar</button>
+        <button type="button" class="next btn">Siguiente</button>
+      </div>
+
+  {{>representDataDisabled}}
+
+      <div class="buttons">  
+        <button type="button" class="prev btn">Anterior</button>
+        <button type="submit" class="submit btn" id="submit">Eliminar</button>
+      </div>
+
+  {{>footer}}

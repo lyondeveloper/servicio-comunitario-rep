@@ -48,9 +48,8 @@ function sendForm(e, url, method) {
 }
 
 //Ajax request to get data from server
-function getData(e) {
-  e.preventDefault();
-  var url = '/api/register/getByName/' + document.getElementById('searchByName').value;
+function getData() {
+  var url = '/api/register/getByName/' + sessionStorage.getItem('name');
   var req = new XMLHttpRequest();
 
   //HTML Form input names
@@ -75,8 +74,6 @@ function getData(e) {
 
   req.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      show(document.getElementById('main'));
-      show(document.getElementById('progressbar'));
 
       var responseObject = JSON.parse(req.responseText);
       var student = responseObject.student;
@@ -158,17 +155,6 @@ function deleteRecord(e) {
   req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
   req.setRequestHeader('token', localStorage.getItem('token'));
   req.send(null);
-}
-
-//Show form
-function show(element) {
-  var show = setInterval(function() {
-    if (element.style.opacity < 1) {
-      element.style.opacity -= '-0.1';
-    } else {
-      clearInterval(show);
-    }
-  }, 50);
 }
 
 //Format date to yyy-mm-dd
