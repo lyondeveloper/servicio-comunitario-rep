@@ -32,7 +32,7 @@ function sendForm(e) {
       var expirationDate = new Date(new Date().getTime() + (responseObject.expiresIn * 1));
       localStorage.setItem('token', responseObject.token);
       localStorage.setItem('expirationDate', expirationDate);
-      localStorage.setItem('id', responseObject.userLogged._id);
+      localStorage.setItem('name', responseObject.userLogged.name);
       window.location.replace('/home');
 
       //Sending ajax request to update online status

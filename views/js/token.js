@@ -30,7 +30,7 @@ function logOut(timeout) {
 function deleteToken() {
 
   //Sending ajax request to update online status
-  var url = '/api/users/getByName/' + localStorage.getItem('user')
+  var url = '/api/users/getByName/' + localStorage.getItem('name');
   var req = new XMLHttpRequest();
 
   req.onreadystatechange = function() {
