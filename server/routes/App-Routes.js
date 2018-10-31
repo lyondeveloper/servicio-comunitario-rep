@@ -61,4 +61,10 @@ router.get('/deleteStudent', (req, res) => {
 
 });
 
+router.get('/print', (req, res) => {
+
+  res.render('print');
+
+});
+
 module.exports = router;

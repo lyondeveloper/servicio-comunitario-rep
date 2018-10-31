@@ -48,8 +48,13 @@ function sendForm(e, url, method) {
 }
 
 //Ajax request to get data from server
-function getData() {
-  var url = '/api/register/getByName/' + sessionStorage.getItem('name');
+function getData(name) {
+  if (name) {
+    var url = '/api/register/getByName/' + name;
+  } else {
+    var url = '/api/register/getByName/' + sessionStorage.getItem('name');
+  }
+  
   var req = new XMLHttpRequest();
 
   //HTML Form input names

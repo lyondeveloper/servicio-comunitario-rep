@@ -1,0 +1,39 @@
+/* Form */
+.main {
+  display: grid;
+  grid-gap: 10px;
+}
+
+/* Data */
+.fieldset {
+  display: grid;
+  width: 95%;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  background-image: radial-gradient(orange 20%, darkorange 100%);
+  padding: 20px;
+}
+
+.title h4 {
+  text-transform: uppercase;
+  text-align: center;
+}
+.data {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px 0;
+}
+.data label {
+  padding-left: 20px;
+  font-size: 13px;
+}
+.data input {
+  padding: 10px;
+  border-radius: 5px;
+  height: 20px;
+  font-size: 13px;
+  width: 100%;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}

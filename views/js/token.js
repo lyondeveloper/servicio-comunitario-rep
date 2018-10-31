@@ -6,11 +6,11 @@ function verifyToken() {
   } else {
     var expirationDate = new Date(localStorage.getItem('expirationDate'));
     if (expirationDate < new Date()) {
-      window.location.assign('/');
       localStorage.removeItem('token');
       localStorage.removeItem('expirationDate');
-      localStorage.removeItem('id');
+      localStorage.removeItem('user');
       sessionStorage.removeItem('name');
+      window.location.assign('/');
     } else {
       var expiresIn = expirationDate.getTime() - new Date().getTime();
       logOut(expiresIn);
@@ -30,7 +30,7 @@ function logOut(timeout) {
 function deleteToken() {
 
   //Sending ajax request to update online status
-  var url = '/api/users/getByName/' + localStorage.getItem('name');
+  var url = '/api/users/getByName/' + localStorage.getItem('user');
   var req = new XMLHttpRequest();
 
   req.onreadystatechange = function() {
@@ -47,7 +47,7 @@ function deleteToken() {
           //Empty storage
           localStorage.removeItem('token');
           localStorage.removeItem('expirationDate');
-          localStorage.removeItem('id');
+          localStorage.removeItem('user');
           sessionStorage.removeItem('name');
           window.location.assign('/');
         }

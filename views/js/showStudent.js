@@ -21,6 +21,9 @@ function initialize() {
   var logout = document.getElementById('logout', deleteToken);
   logout.addEventListener('click', deleteToken);
 
+  var print = document.getElementById('main');
+  print.addEventListener('submit', printDocument);
+
   setTimeout(function() {
     var element = document.getElementsByClassName('modal')[0];
     element.style.display = 'none';
@@ -30,4 +33,12 @@ function initialize() {
   verifyToken();
 }
 
-window.addEventListener("load", initialize);
+//Prints the document
+function printDocument(e) {
+  e.preventDefault();
+  var printWindow = window.open('', '', 'height=600,width=800');
+  printWindow.location.replace('/print');
+  printWindow.document.close();
+}
+
+window.addEventListener('load', initialize);
