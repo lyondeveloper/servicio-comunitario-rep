@@ -7,16 +7,23 @@ const path = require('path');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const hbs = require('hbs');
+const passport = require('passport');
+const session = require('express-session');
 
 //Middlewares
 app.use(express.static(path.resolve(__dirname, '../views')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(session({secret: "secret", resave: false, saveUninitialized: true}));
 app.use(require('./routes/routes'));
 hbs.registerPartials(path.resolve(__dirname, '../views/partials'));
 app.set('view engine', 'hbs');
 
 const server = http.createServer(app);
+
+//Passport configuration
+app.use(passport.initialize());
+require('./config/passport')(passport);
 
 mongoose.connect(process.env.MONGOURI, (err) => {
 

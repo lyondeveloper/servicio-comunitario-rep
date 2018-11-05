@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const Schema = mongoose.Schema;
-const Represent = require('./Represent-Model');
-const Parent = require('./Parent-Model');
+const Represent = require('./Represent');
+const Parent = require('./Parent');
 
 let validSexTypes = {
 
@@ -137,6 +137,13 @@ let studentSchema = new Schema({
 
         type: String,
         required: [true, 'The alergic to field is needed']
+
+    },
+
+    date: {
+
+        type: Date,
+        default: Date.now
 
     },
 

@@ -1,5 +1,6 @@
 //Importing neccesary modules
 import { verifyToken, deleteToken } from './token.js';
+import { verifySession, interval } from './session.js';
 
 //Initializing variables
 function initialize() {
@@ -12,6 +13,7 @@ function initialize() {
   }, 2000);
 
   verifyToken();
+  verifySession();
 }
 
 window.addEventListener('load', initialize);

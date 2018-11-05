@@ -1,6 +1,7 @@
 //Importing neccesary modules
 import { nextButton, prevButton } from './fade.js';
 import { verifyToken, deleteToken } from './token.js';
+import { verifySession, interval } from './session.js';
 import { getData, sendForm, id } from './ajax.js';
 
 //Initializing variables
@@ -33,6 +34,7 @@ function initialize() {
 
   getData();
   verifyToken();
+  verifySession();
 }
 
 window.addEventListener("load", initialize);

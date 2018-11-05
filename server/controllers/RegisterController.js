@@ -1,6 +1,6 @@
-const Student = require('../models/register/Student-Model');
-const Parent = require('../models/register/Parent-Model');
-const Represent = require('../models/register/Represent-Model');
+const Student = require('../models/register/Student');
+const Parent = require('../models/register/Parent');
+const Represent = require('../models/register/Represent');
 const _ = require('underscore');
 
 class RegisterController {
@@ -115,10 +115,10 @@ class RegisterController {
 
             if (!students) {
 
-                return res.status(401).json({
+                return res.status(404).json({
 
                     ok: false,
-                    message: "Maybe there isn't users in the database"
+                    message: "Maybe there are no students in the database"
 
                 });
 
@@ -164,10 +164,10 @@ class RegisterController {
 
           if (!students) {
 
-              return res.status(401).json({
+              return res.status(404).json({
 
                   ok: false,
-                  message: "Maybe the user doesn't exist"
+                  message: "Maybe there are no students"
 
               });
 
@@ -205,10 +205,10 @@ class RegisterController {
 
             if (!student) {
 
-                return res.status(401).json({
+                return res.status(404).json({
 
                     ok: false,
-                    message: "Maybe the user doesn't exist"
+                    message: "Maybe the student doesn't exist"
 
                 });
 
@@ -244,7 +244,7 @@ class RegisterController {
 
             if (!student) {
 
-                return res.status(401).json({
+                return res.status(404).json({
 
                     ok: false,
                     message: "Maybe the student doesn't exist"
@@ -269,7 +269,7 @@ class RegisterController {
         let id = req.params.id;
         let body = req.body;
 
-        Student.findOneAndUpdate(id, body, {
+        Student.findOneAndUpdate({_id: id}, body, {
 
             new: true,
             runValidators: true
@@ -375,7 +375,7 @@ class RegisterController {
 
         let id = req.params.id;
 
-        Student.findOneAndDelete(id, (error, studentDeleted) => {
+        Student.findOneAndDelete({_id: id}, (error, studentDeleted) => {
 
             if (error) {
 
@@ -390,7 +390,7 @@ class RegisterController {
 
             if (!studentDeleted) {
 
-                return res.status(400).json({
+                return res.status(404).json({
 
                     ok: false,
                     message: "Maybe the user you want to delete doesn't exist"

@@ -7,9 +7,11 @@ function sendForm(e, url, method) {
   var req = new XMLHttpRequest();
 
   req.onreadystatechange = function() {
+
     if (this.readyState == 4 && this.status == 200) {
       window.location.assign('/home');
     }
+    
   };
 
   //Student fields
@@ -43,7 +45,7 @@ function sendForm(e, url, method) {
 
   req.open(method, url, true);//Preparing req
   req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  req.setRequestHeader('token', localStorage.getItem('token'));
+  req.setRequestHeader('Authorization', localStorage.getItem('Authorization'));
   req.send(data);
 }
 
@@ -54,7 +56,7 @@ function getData(name) {
   } else {
     var url = '/api/register/getByName/' + sessionStorage.getItem('name');
   }
-  
+
   var req = new XMLHttpRequest();
 
   //HTML Form input names
@@ -78,6 +80,7 @@ function getData(name) {
   var repreKeysDB = repre3.concat(repre4);
 
   req.onreadystatechange = function() {
+
     if (this.readyState == 4 && this.status == 200) {
 
       var responseObject = JSON.parse(req.responseText);
@@ -132,15 +135,18 @@ function getData(name) {
         document.querySelector("input[name='representBirthday']").value = repreBirthday;
       }
     }
+
     if (this.readyState == 4 && this.status == 401) {
+
       var inputs = document.querySelectorAll('input[name]');
       for (var i = 0; i < inputs.length; i++) {
         inputs[i].value = '';
       }
+
     }
   }
   req.open('GET', url, true);//Preparing req
-  req.setRequestHeader('token', localStorage.getItem('token'));
+  req.setRequestHeader('Authorization', localStorage.getItem('Authorization'));
   req.send(null);
 }
 
@@ -151,14 +157,16 @@ function deleteRecord(e) {
   var req = new XMLHttpRequest();
 
   req.onreadystatechange = function() {
+
     if (this.readyState == 4 && this.status == 200) {
       window.location.assign('/home');
+
     }
   };
 
   req.open('DELETE', url, true);//Preparing req
   req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  req.setRequestHeader('token', localStorage.getItem('token'));
+  req.setRequestHeader('Authorization', localStorage.getItem('Authorization'));
   req.send(null);
 }
 

@@ -1,6 +1,9 @@
-const User = require('../models/User-Model');
+const User = require('../models/User');
 const _ = require('underscore');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+const Session = require('./SessionController');
 
 class UserController {
 
@@ -42,6 +45,71 @@ class UserController {
 
     }
 
+    login(req, res) {
+
+        let body = req.body;
+
+        User.findOne({email: body.email}, (err, user) => {
+
+            if (err) {
+
+                return res.status(500).json(err);
+
+            }
+
+            if (!user) {
+
+                return res.status(404).json({
+
+                    ok: false,
+                    message: "(User) or Password are incorrect"
+
+                });
+
+            }
+
+            if (!bcrypt.compareSync(body.password, user.password)) {
+
+                return res.status(404).json({
+
+                    ok: false,
+                    message: "User or (password) are incorrect"
+
+                });
+
+            }
+
+            req.session.userID = user._id;
+
+            Session.updateSession(req, res);
+
+            const payload = {
+
+              id: user._id,
+              name: user.name,
+
+            }
+
+            let token = jwt.sign(payload, process.env.TOKEN_SEED, {
+
+                expiresIn: process.env.TOKEN_EXPIRATION
+
+            });
+
+            res.json({
+
+                ok: true,
+                user,
+                message: "You have logged in succesfully",
+                expiresIn: process.env.TOKEN_EXPIRATION,
+                token: 'Bearer ' + token
+
+            });
+
+        });
+  
+    }
+
     getAll(req, res) {
 
         let from = req.query.from;
@@ -69,7 +137,7 @@ class UserController {
 
                 if (users.length === 0) {
 
-                    return res.status(400).json({
+                    return res.status(404).json({
 
                         ok: false,
                         message: "Maybe there isn't users registered in the database"
@@ -113,7 +181,7 @@ class UserController {
 
             if (!user) {
 
-                return res.status(401).json({
+                return res.status(404).json({
 
                     ok: false,
                     message: "Maybe the user doesn't exist in the database"
@@ -152,7 +220,7 @@ class UserController {
 
             if (!user) {
 
-                return res.status(400).json({
+                return res.status(404).json({
 
                     ok: false,
                     message: "Maybe, the user doesn't exist"
@@ -193,7 +261,7 @@ class UserController {
 
             if (!userUpdated) {
 
-                return res.status(400).json({
+                return res.status(404).json({
 
                     ok: false,
                     message: "Maybe this user doesn't exist"
@@ -216,7 +284,7 @@ class UserController {
 
         let id = req.params.id;
 
-        User.findByIdAndRemove(id, (err, userDeleted) => {
+        User.findByIdAndRemove({_id: id}, (err, userDeleted) => {
 
             if (err) {
 
@@ -231,7 +299,7 @@ class UserController {
 
             if (!userDeleted) {
 
-                return res.status(400).json({
+                return res.status(404).json({
 
                     ok: false,
                     message: "Maybe the user you want to delete, doesn't exist"

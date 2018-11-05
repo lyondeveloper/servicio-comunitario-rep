@@ -35,7 +35,7 @@ function showRecords() {
   }
 
   req.open('GET', url, true);
-  req.setRequestHeader('token', localStorage.getItem('token'));
+  req.setRequestHeader('Authorization', localStorage.getItem('Authorization'));
   req.send(null);
 }
 

@@ -1,6 +1,7 @@
 //Importing neccesary modules
 import { nextButton, prevButton } from './fade.js';
 import { verifyToken, deleteToken } from './token.js';
+import { verifySession, interval } from './session.js';
 import { getData } from './ajax.js';
 
 //Initializing variables
@@ -18,7 +19,7 @@ function initialize() {
     button.addEventListener('click', prevButton);
   }
 
-  var logout = document.getElementById('logout', deleteToken);
+  var logout = document.getElementById('logout');
   logout.addEventListener('click', deleteToken);
 
   var print = document.getElementById('main');
@@ -31,14 +32,15 @@ function initialize() {
 
   getData();
   verifyToken();
+  verifySession();
 }
 
 //Prints the document
 function printDocument(e) {
   e.preventDefault();
-  var printWindow = window.open('', '', 'height=600,width=800');
+  var printWindow = window.open('', '', `height=${screen.availHeight},width=${screen.availWidth}`);
   printWindow.location.replace('/print');
   printWindow.document.close();
 }
 
-window.addEventListener('load', initialize);
+window.addEventListener("load", initialize);
