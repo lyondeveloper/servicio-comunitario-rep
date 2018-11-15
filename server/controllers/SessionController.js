@@ -8,9 +8,9 @@ class SessionController {
 
       if (req.session.userID) {
 
-        let userID = '' + req.session.userID;
+        const userID = '' + req.session.userID;
         
-        let body = {
+        const body = {
 
           userID,
           userSession: req.sessionID
@@ -27,7 +27,7 @@ class SessionController {
 
           if (!session) {
 
-            let session = new Session(body);
+            const session = new Session(body);
 
             session.save((err, session) => {
 
@@ -49,9 +49,9 @@ class SessionController {
 
     verifySession(req, res) {
 
-      let userID = req.user._id;
-      let cookie = req.headers.cookie;
-      let cookieValue = this.parseCookie(cookie);
+      const userID = req.user._id;
+      const cookie = req.headers.cookie;
+      const cookieValue = this.parseCookie(cookie);
     
       Session.findOne({userID}, (err, session) => {
     
@@ -104,11 +104,11 @@ class SessionController {
     //Cookie Parser made by Javier
     parseCookie(cookie) {
 
-      var decodedCookie = decodeURIComponent(cookie);
+      const decodedCookie = decodeURIComponent(cookie);
 
-      var cookieValue = decodedCookie.split('connect.sid=s:');
+      const cookieValue = decodedCookie.split('connect.sid=s:');
 
-      var cookieSession = cookieValue[1].split('.');
+      const cookieSession = cookieValue[1].split('.');
       
       return cookieSession[0];
 
@@ -116,6 +116,6 @@ class SessionController {
 
 }
 
-var sessionController = new SessionController();
+const sessionController = new SessionController();
 
 module.exports = sessionController;
